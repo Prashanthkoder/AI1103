@@ -165,7 +165,17 @@ where $S(x)$ is the survival function given by,
 \begin{align}
 S(x) = P(X \geq x) = 1-F(x) = \int_{x}^{\infty}f(t)dt
 \end{align}
-Also, 
+\begin{lemma}
+\begin{align}
+S(x)=
+\begin{cases}
+e^{-(x-\mu)^\alpha} &x>\mu\\
+1 &x\leq\mu
+\end{cases}
+\end{align}
+\end{lemma}
+\begin{proof}
+
 \begin{align}
 \int f(t)dt=\int \alpha(t-\mu)^{\alpha-1}e^{-(t-\mu)^\alpha}dt\\
 =-e^{-(t-\mu)^\alpha} + C
@@ -190,6 +200,7 @@ e^{-(x-\mu)^\alpha} &x>\mu\\
 1 &x\leq\mu \label{eq:4}
 \end{cases}
 \end{align}
+\end{proof}
 From \eqref{eq:1} and \eqref{eq:4}, we get
 \begin{align}
 \lambda(x) = 
@@ -201,14 +212,14 @@ From \eqref{eq:1} and \eqref{eq:4}, we get
 So,\\ if $\alpha>1$, $\lambda(x)$ is an increasing function
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=6cm]{alphagrt1.png}
+    \includegraphics[width=8cm]{alphagrt1.png}
     \caption{$\alpha=2$ for red. $\alpha=1$ for green, $\mu=1$ for both}
     \label{fig:grt1}
 \end{figure}
 and\\ if $0<\alpha<1$, $\lambda(x)$ is a decreasing function
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=6cm]{alphales1.png}
+    \includegraphics[width=8cm]{alphales1.png}
     \caption{$\alpha=0.5$ for blue. $\alpha=1$ for green, $\mu=1$ for both}
     \label{fig:les1}
 \end{figure}
