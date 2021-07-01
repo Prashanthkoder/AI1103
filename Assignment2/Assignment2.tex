@@ -155,42 +155,65 @@ The Variance of the random variable X is\\
 (B)$\frac{1}{4}$\hspace{3.18cm}(D)$\frac{5}{12}$
 \section*{\textbf{Solution(GATE 67)}}
 Variance of the random variable X is $E\brak{X^2}-\brak{E\brak{X}}^2$\\
+\begin{lemma}
+$E(X) = \frac{1}{2}$
+\end{lemma}
+\begin{proof}
 \begin{align}
  E\brak{X}=&\int_{0}^{1}\int_{-\infty}^{\infty}x f_{XY}(x,y)\,dx\,dy\\
     =&\int_{0}^{1}\int_{-\infty}^{\infty}x\frac{1}{\sqrt{2\pi y}}e^{\frac{-1}{2y}(x-y)^2}\,dx \,dy\\
      =&\int_{0}^{1}\frac{1}{\sqrt{2\pi y}}(\int_{-\infty}^{\infty}xe^{-\frac{1}{2y}(x-y)^2}\,dx)\,dy \label{eq:1}
 \end{align}
-Also, 
+
+
+
+\begin{lemma}
+$\int_{-\infty}^{\infty}xe^{-\frac{1}{2y}(x-y)^2}\,dx = \sqrt{2\pi}y^\frac{3}{2}$
+\end{lemma}
+\begin{proof}
 \begin{align}
     &\int_{-\infty}^{\infty}xe^{-\frac{1}{2y}(x-y)^2}\,dx\\
-  &=\int_{-\infty}^{\infty}(x-y)e^{-\frac{1}{2y}(x-y)^2}\,dx+y\int_{-\infty}^{\infty}e^{-\frac{1}{2y}(x-y)^2}\,dx\\
-  =&0+[\frac{\sqrt{\pi y^3}}{\sqrt{2}}erf(\frac{x-y}{\sqrt{2y}})]_{-\infty}^{\infty}\\
+  =&\int_{-\infty}^{\infty}(x-y)e^{-\frac{1}{2y}(x-y)^2}\,dx+y\int_{-\infty}^{\infty}e^{-\frac{1}{2y}(x-y)^2}\,dx\\
+ =&0+\sqrt{2\pi}y^{\frac{3}{2}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{y}\sqrt{2\pi}}e^{\frac{-1}{2(\sqrt{y})^2}(x-y)^2}\,dx\\
+ =&\sqrt{2\pi}y^\frac{3}{2}\lim_{x_0 \to -\infty}Q(\frac{x_0 - y}{\sqrt{y}})\\
   =&\sqrt{2\pi}y^\frac{3}{2} \label{eq:2}
 \end{align}
+\end{proof}
+
 From \eqref{eq:1} and \eqref{eq:2}, 
 \begin{align}
 E\brak{X}=&\int_{0}^{1}y\,dy\\
 E\brak{X}=&\frac{1}{2} \label{eq:3}
 \end{align}
+\end{proof}
+\begin{lemma}
+$E(X^2) = \frac{5}{6}$
+\end{lemma}
+\begin{proof}
 \begin{align}
  E\brak{X^2}=&\int_{0}^{1}\int_{-\infty}^{\infty}x^2\,f_{XY}(x, y)\,dx\,dy\\   
  =&\int_{0}^{1}\int_{-\infty}^{\infty}x^2\frac{1}{\sqrt{2\pi y}}e^{\frac{-1}{2y}(x-y)^2}\,dx \,dy\\
  =&\int_{0}^{1}\frac{1}{\sqrt{2\pi y}}(\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}(x-y)^2}\,dx)\,dy
  \label{eq:4}
 \end{align}
-Also, 
+\begin{lemma}
+$\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}(x-y)^2}\,dx=\sqrt{2\pi}y^\frac{3}{2}(y+1)$
+\end{lemma} 
+\begin{proof}
 \begin{align}
 &\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}(x-y)^2}\,dx\\
-&=(\sqrt{\frac{\pi}{2}}y^\frac{3}{2}(y+1)erf(\frac{x-y}{\sqrt{2y}}) - ye^\frac{-(x-y)^2}{2y}(x+y))]_{-\infty}^{\infty}\\
-&=\sqrt{\frac{\pi}{2}}y^\frac{3}{2}(y+1)(2) - 0\\
+&=(\sqrt{\frac{\pi}{2}}y^\frac{3}{2}(y+1)(1-2Q(\frac{x-y}{\sqrt{y}})) - ye^\frac{-(x-y)^2}{2y}(x+y))]_{-\infty}^{\infty}\\
+&=0-\sqrt{2\pi}y^\frac{3}{2}(y+1)Q(\frac{x-y}{\sqrt{y}})]_{-\infty}^{\infty} - 0\\
 &=\sqrt{2\pi}y^\frac{3}{2}(y+1) \label{eq:5}
 \end{align}
+\end{proof}
 From \eqref{eq:4} and \eqref{eq:5}, we get
 \begin{align}
 E(X^2) = \int_{0}^{1}y(y+1)dy\\
 &=(\frac{y^3}{3}+\frac{y^2}{2})]_{0}^{1}\\
 &=\frac{1}{3}+\frac{1}{2}=\frac{5}{6} \label{eq:6}
 \end{align}
+\end{proof}
 From \eqref{eq:3} and \eqref{eq:6}, we get
 \begin{align}
 V(X) = E(X^2) - (E(X))^2\\
