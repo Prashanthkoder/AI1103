@@ -164,17 +164,6 @@ Variance of the random variable X is
 \end{align}
 \begin{lemma}
 \begin{align}
-E\brak{X} = \frac{1}{2}
-\end{align}
-\end{lemma}
-\begin{proof}
-\begin{align}
- E\brak{X}=&\int_{0}^{1}\int_{-\infty}^{\infty}x f_{XY}\brak{x,y}\,dx\,dy\\
-    =&\int_{0}^{1}\int_{-\infty}^{\infty}x\frac{1}{\sqrt{2\pi y}}e^{\frac{-1}{2y}\brak{x-y}^2}\,dx \,dy\\
-     =&\int_{0}^{1}\frac{1}{\sqrt{2\pi y}}\brak{\int_{-\infty}^{\infty}xe^{-\frac{1}{2y}\brak{x-y}^2}\,dx}\,dy \label{eq:1}
-\end{align}
-\begin{lemma}
-\begin{align}
     \int_{-\infty}^{\infty}xe^{-\frac{1}{2y}\brak{x-y}^2}\,dx = \sqrt{2\pi}y^\frac{3}{2}
 \end{align}
 \end{lemma}
@@ -187,11 +176,36 @@ E\brak{X} = \frac{1}{2}
   =&\sqrt{2\pi}y^\frac{3}{2} \label{eq:2}
 \end{align}
 \end{proof}
+\begin{lemma}
+\begin{align}
+E\brak{X} = \frac{1}{2}
+\end{align}
+\end{lemma}
+\begin{proof}
+\begin{align}
+ E\brak{X}=&\int_{0}^{1}\int_{-\infty}^{\infty}x f_{XY}\brak{x,y}\,dx\,dy\\
+    =&\int_{0}^{1}\int_{-\infty}^{\infty}x\frac{1}{\sqrt{2\pi y}}e^{\frac{-1}{2y}\brak{x-y}^2}\,dx \,dy\\
+     =&\int_{0}^{1}\frac{1}{\sqrt{2\pi y}}\brak{\int_{-\infty}^{\infty}xe^{-\frac{1}{2y}\brak{x-y}^2}\,dx}\,dy \label{eq:1}
+\end{align}
+
 
 From \eqref{eq:1} and \eqref{eq:2}, 
 \begin{align}
 E\brak{X}=&\int_{0}^{1}y\,dy\\
 E\brak{X}=&\frac{1}{2} \label{eq:3}
+\end{align}
+\end{proof}
+\begin{lemma}
+\begin{align}
+\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}\brak{x-y}^2}\,dx=\sqrt{2\pi}y^\frac{3}{2}\brak{y+1}
+\end{align}
+\end{lemma} 
+\begin{proof}
+\begin{align}
+&\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}\brak{x-y}^2}\,dx\\
+&=\brak{\sqrt{\frac{\pi}{2}}y^\frac{3}{2}\brak{y+1}\brak{1-2Q\brak{\frac{x-y}{\sqrt{y}}}} - ye^\frac{-\brak{x-y}^2}{2y}\brak{x+y}}]_{-\infty}^{\infty}\\
+&=0-\sqrt{2\pi}y^\frac{3}{2}\brak{y+1}Q\brak{\frac{x-y}{\sqrt{y}}}]_{-\infty}^{\infty} - 0\\
+&=\sqrt{2\pi}y^\frac{3}{2}\brak{y+1} \label{eq:5}
 \end{align}
 \end{proof}
 \begin{lemma}
@@ -206,19 +220,7 @@ E\brak{X^2} = \frac{5}{6}
  =&\int_{0}^{1}\frac{1}{\sqrt{2\pi y}}\brak{\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}\brak{x-y}^2}\,dx}\,dy
  \label{eq:4}
 \end{align}
-\begin{lemma}
-\begin{align}
-\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}\brak{x-y}^2}\,dx=\sqrt{2\pi}y^\frac{3}{2}\brak{y+1}
-\end{align}
-\end{lemma} 
-\begin{proof}
-\begin{align}
-&\int_{-\infty}^{\infty}x^2e^{-\frac{1}{2y}\brak{x-y}^2}\,dx\\
-&=\brak{\sqrt{\frac{\pi}{2}}y^\frac{3}{2}\brak{y+1}\brak{1-2Q\brak{\frac{x-y}{\sqrt{y}}}} - ye^\frac{-\brak{x-y}^2}{2y}\brak{x+y}}]_{-\infty}^{\infty}\\
-&=0-\sqrt{2\pi}y^\frac{3}{2}\brak{y+1}Q\brak{\frac{x-y}{\sqrt{y}}}]_{-\infty}^{\infty} - 0\\
-&=\sqrt{2\pi}y^\frac{3}{2}\brak{y+1} \label{eq:5}
-\end{align}
-\end{proof}
+
 From \eqref{eq:4} and \eqref{eq:5}, we get
 \begin{align}
 E\brak{X^2} = \int_{0}^{1}y\brak{y+1}dy\\
